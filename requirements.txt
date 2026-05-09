@@ -2,5 +2,4 @@ streamlit
 requests
 google-generativeai
 python-dotenv
-SpeechRecognition
-PyAudio
+
