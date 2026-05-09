@@ -1,12 +1,12 @@
 import streamlit as st
 import time
-# import speech_recognition as sr
 import pandas as pd
 
-from models.gemini_model import run_gemini
-from models.groq_model import run_groq
-from models.openrouter import run_openrouter
-from utils.metrics import calculate_metrics
+# DIRECT IMPORTS FROM SAME FOLDER
+from gemini_model import run_gemini
+from groq_model import run_groq
+from openrouter import run_openrouter
+from metrics import calculate_metrics
 
 # ================= PAGE CONFIG =================
 st.set_page_config(
@@ -20,31 +20,6 @@ if "results" not in st.session_state:
 
 if "question_text" not in st.session_state:
     st.session_state.question_text = ""
-
-# ================= VOICE FUNCTION =================
-"""
-def voice_to_text():
-
-    recognizer = sr.Recognizer()
-    mic = sr.Microphone()
-
-    try:
-
-        with mic as source:
-
-            st.info("🎤 Listening... Please speak")
-
-            recognizer.adjust_for_ambient_noise(source)
-
-            audio = recognizer.listen(source)
-
-        text = recognizer.recognize_google(audio)
-
-        return text
-
-    except:
-        return "Voice recognition error"
-"""
 
 # ================= DARK UI =================
 st.markdown("""
@@ -228,19 +203,6 @@ with st.sidebar:
         value=st.session_state.question_text,
         height=150
     )
-
-    # ================= VOICE INPUT =================
-    """
-    if st.button("🎤 Voice Input"):
-
-        voice_text = voice_to_text()
-
-        st.session_state.question_text = voice_text
-
-        st.success(f"Recognized: {voice_text}")
-
-        st.rerun()
-    """
 
     # ================= COMPARE BUTTON =================
     if st.button("🚀 Compare Text Models"):
