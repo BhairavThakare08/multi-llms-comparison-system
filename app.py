@@ -1,6 +1,6 @@
 import streamlit as st
 import time
-import speech_recognition as sr
+# import speech_recognition as sr
 import pandas as pd
 
 from models.gemini_model import run_gemini
@@ -22,6 +22,7 @@ if "question_text" not in st.session_state:
     st.session_state.question_text = ""
 
 # ================= VOICE FUNCTION =================
+"""
 def voice_to_text():
 
     recognizer = sr.Recognizer()
@@ -43,6 +44,7 @@ def voice_to_text():
 
     except:
         return "Voice recognition error"
+"""
 
 # ================= DARK UI =================
 st.markdown("""
@@ -228,6 +230,7 @@ with st.sidebar:
     )
 
     # ================= VOICE INPUT =================
+    """
     if st.button("🎤 Voice Input"):
 
         voice_text = voice_to_text()
@@ -237,6 +240,7 @@ with st.sidebar:
         st.success(f"Recognized: {voice_text}")
 
         st.rerun()
+    """
 
     # ================= COMPARE BUTTON =================
     if st.button("🚀 Compare Text Models"):
