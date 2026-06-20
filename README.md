@@ -1,150 +1,131 @@
+# 🆚 Multi-LLM Comparison System
 
-# 🚀 Multi-LLM Comparison & Evaluation System
+> *"Don't guess which AI is better — benchmark it."*
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python" />
-  <img src="https://img.shields.io/badge/Streamlit-Framework-red?style=for-the-badge&logo=streamlit" />
-  <img src="https://img.shields.io/badge/AI-LLM%20Dashboard-black?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/OpenRouter-API-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Groq-API-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Gemini-AI-blueviolet?style=for-the-badge" />
-</p>
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&pause=1000&color=00D4FF&width=600&lines=Gemini+2.5+Flash+vs+Llama+3.1+8B+vs+DeepSeek+V3;One+Prompt.+Three+Models.+Real+Metrics.;Built+for+Engineers+who+take+AI+seriously." />
 
 ---
 
-# 📌 Project Overview
+## 💡 The Problem I Solved
 
-Multi-LLM Comparison & Evaluation System is an AI-powered Streamlit dashboard designed to compare responses from multiple Large Language Models (LLMs) side-by-side in real time.
+Every developer using LLMs faces the same question:
 
-The platform integrates multiple AI providers including Gemini, Groq, and OpenRouter APIs to analyze:
+**"Which model should I use for this?"**
 
-* Response Quality
-* Response Speed
-* Output Length
-* Comparative Performance
-* Model Efficiency
+Switching between ChatGPT, Gemini, and Groq tabs, copy-pasting the same prompt, manually comparing outputs — it's slow, inconsistent, and unscientific.
 
-The system provides a modern dark-themed interface for interactive AI benchmarking and evaluation.
+**This project fixes that.**
+
+Type your prompt once. Get responses from **3 frontier LLMs simultaneously** with objective metrics to back your choice.
 
 ---
 
-# ✨ Features
+## ⚡ Under The Hood
 
-## 🤖 Multi-LLM Comparison
-
-Compare responses from multiple AI models simultaneously.
-
-Supported Models:
-
-* Gemini 2.5 Flash
-* Llama 3.1 8B (Groq)
-* DeepSeek V3 (OpenRouter)
-
----
-
-## 📊 Real-Time Evaluation
-
-Automatically evaluates:
-
-* Response Time
-* Word Count
-* Model Performance
-
----
-
-## 🎨 Modern Dark UI
-
-* Fully responsive dashboard
-* Professional black theme
-* AI-style interface
-* Interactive layout
+```
+Your Prompt
+    │
+    ├──▶  gemini_model.py   ──▶  Gemini 2.5 Flash    (Google AI)
+    ├──▶  groq_model.py     ──▶  Llama 3.1 8B        (Groq)
+    └──▶  openrouter.py     ──▶  DeepSeek V3          (OpenRouter)
+                │
+                ▼
+          metrics.py
+    ┌─────────────────────┐
+    │  ⏱ Response Time    │
+    │  📝 Word Count      │
+    │  🏆 Best Model Pick │
+    └─────────────────────┘
+                │
+                ▼
+    Streamlit Dark Dashboard
+```
 
 ---
 
-## ⚡ Fast API Integration
+## 🧰 Built With
 
-Integrated with:
-
-* Google Gemini API
-* Groq API
-* OpenRouter API
-
----
-
-## 📈 Comparison Dashboard
-
-Displays:
-
-* Side-by-side responses
-* Evaluation metrics
-* Best model selection
+```python
+tech = {
+    "language"  : "Python 3.10+",
+    "ui"        : "Streamlit (Dark Theme)",
+    "llm_1"     : "Gemini 2.5 Flash  →  Google AI API",
+    "llm_2"     : "Llama 3.1 8B      →  Groq API",
+    "llm_3"     : "DeepSeek V3       →  OpenRouter API",
+    "metrics"   : "Custom evaluation engine (metrics.py)",
+    "config"    : "python-dotenv  |  .env  |  zero hardcoding"
+}
+```
 
 ---
 
-# 🖥️ Project Interface
+## 📂 File Structure
 
-## Dashboard Includes:
-
-* Sidebar model selector
-* Prompt input system
-* Response cards
-* Comparison table
-* Performance metrics
-
----
-
-# 🛠️ Tech Stack
-
-| Technology     | Purpose               |
-| -------------- | --------------------- |
-| Python         | Core Programming      |
-| Streamlit      | Frontend Dashboard    |
-| Pandas         | Data Handling         |
-| Requests       | API Communication     |
-| Gemini API     | AI Model              |
-| Groq API       | AI Model              |
-| OpenRouter API | AI Model              |
-| dotenv         | Environment Variables |
+```
+multi-llms-comparison-system/
+│
+├── app.py            ← Streamlit UI + orchestration logic
+├── gemini_model.py   ← Google Gemini 2.5 Flash handler
+├── groq_model.py     ← Llama 3.1 via Groq handler
+├── openrouter.py     ← DeepSeek V3 via OpenRouter handler
+├── metrics.py        ← Scoring: time · words · performance
+├── .env.example      ← API key template (safe to share)
+└── requirements.txt
+```
 
 ---
 
-# 🔑 API Setup
+## 🚀 Run It Yourself
 
-Create a `.env` file in the root directory.
+**Step 1 — Clone**
+```bash
+git clone https://github.com/BhairavThakare08/multi-llms-comparison-system.git
+cd multi-llms-comparison-system
+```
 
+**Step 2 — Install**
+```bash
+pip install -r requirements.txt
+```
 
-GEMINI_API_KEY=your_gemini_api_key
-GROQ_API_KEY=your_groq_api_key
-OPENROUTER_API_KEY=your_openrouter_api_key
+**Step 3 — Add API Keys**
+```bash
+# Create your .env file
+GEMINI_API_KEY      = your_key_here
+GROQ_API_KEY        = your_key_here
+OPENROUTER_API_KEY  = your_key_here
+```
+> 🔐 Keys stay in `.env` — never committed, never exposed.
+
+**Step 4 — Launch**
+```bash
+streamlit run app.py
+```
 
 ---
 
-# 🌐 Live Demo
+## 📊 What Gets Measured
 
-🔗 https://multi-llms-comparison-system-ehezxqgiznsvnbuvvycu8w.streamlit.app/
+| Metric | What It Tells You |
+|---|---|
+| ⏱ Response Time | Which model is fastest for production use |
+| 📝 Word Count | Which model gives most detailed answers |
+| 🏆 Performance Score | Overall winner across both dimensions |
+
+---
 
 
 ---
 
-# 📊 Evaluation Parameters
+## 🙋‍♂️ Made By
 
-The system compares models based on:
+**Bhairav Thakare** — AI & Data Science Engineering Student
 
-| Metric               | Description                  |
-| -------------------- | ---------------------------- |
-| Response Time        | Speed of model output        |
-| Word Count           | Length of generated response |
-| Comparative Analysis | Performance benchmarking     |
+Passionate about LLMs, RAG pipelines, and building things that actually work.
 
-
----
-
-# 👨‍💻 Author
-
-## Bhairav Thakare
-
-AI & Data Science Engineering Student
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bhairav-thakare-528137325)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/BhairavThakare08)
+[![Gmail](https://img.shields.io/badge/-Gmail-D14836?style=flat&logo=gmail&logoColor=white)](mailto:bhairavthakare@gmail.com)
 
 ---
-
 
