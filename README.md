@@ -2,6 +2,10 @@
 
 > *"Don't guess which AI is better — benchmark it."*
 
+<a href="https://multi-llms-comparison-system-ehezxqgiznsvnbuvvycu8w.streamlit.app/" target="_blank">
+  <img src="https://img.shields.io/badge/🚀 Live Demo-Click Here-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
+</a>
+
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&pause=1000&color=00D4FF&width=600&lines=Gemini+2.5+Flash+vs+Llama+3.1+8B+vs+DeepSeek+V3;One+Prompt.+Three+Models.+Real+Metrics.;Built+for+Engineers+who+take+AI+seriously." />
 
 ---
@@ -114,6 +118,15 @@ streamlit run app.py
 
 ---
 
+## 🔭 What's Coming Next
+
+```
+▢  Add Claude 3.5, GPT-4o, Mistral to the comparison
+▢  Token count + estimated API cost per response
+▢  Export full benchmark report as PDF
+▢  Prompt templates library for common use cases
+▢  Public leaderboard across model versions
+```
 
 ---
 
